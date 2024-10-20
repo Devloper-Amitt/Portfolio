@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Amit's Portfolio</title>
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body class="dark-mode">
+  <div class="loader">
+    <span>Loading...</span>
+  </div>
+
+  <header class="navbar">
+    <h1 class="logo">Amit<span>'s Portfolio</span></h1>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button class="mode-toggle" onclick="toggleMode()">Toggle Dark/Light Mode</button>
+    </nav>
+    <button class="theme-toggle" onclick="toggleTheme()">
+      <i class="fas fa-moon"></i>
+    </button>
+  </header>
+
+  <section id="home" class="section hero">
+    <div class="hero-content">
+      <h2>Hello, I'm <span>Amit</span></h2>
+      <p>Web Developer | Designer | Freelancer</p>
+      <button class="cta-button" onclick="scrollToSection('about')">Know Me</button>
+    </div>
+  </section>
+
+  <section id="about" class="section about">
+    <h2>About Me</h2>
+    <div class="about-content">
+      <p>
+        I'm a passionate front-end developer, self-taught from YouTube and various online resources since class 8. 
+        I specialize in building sleek, responsive web pages with HTML, CSS, JavaScript, Bootstrap, and other CSS frameworks.
+      </p>
+      <p>
+        My journey began with a curiosity for web design, leading me to explore and master the skills that enable me to create 
+        dynamic and user-friendly websites. I believe in continuous learning and improving my craft with every project I take on.
+      </p>
+    </div>
+  </section>
+
+  <section id="projects" class="section projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Project Title 1</h3>
+        <p>Short description of the project.</p>
+        <a href="your-github-link-1" target="_blank">View on GitHub</a>
+      </div>
+      <div class="project-card">
+        <h3>Project Title 2</h3>
+        <p>Short description of the project.</p>
+        <a href="your-github-link-2" target="_blank">View on GitHub</a>
+      </div>
+      <!-- Add more project cards as needed -->
+    </div>
+  </section>
+
+  <section id="skills" class="section skills">
+    <h2>My Skills</h2>
+    <div class="skills-logos">
+      <div class="skill-item" onclick="openPopup('html')">
+        <img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML">
+        <span>HTML</span>
+      </div>
+      <div class="skill-item" onclick="openPopup('css')">
+        <img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS">
+        <span>CSS</span>
+      </div>
+      <div class="skill-item" onclick="openPopup('javascript')">
+        <img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript">
+        <span>JavaScript</span>
+      </div>
+      <div class="skill-item" onclick="openPopup('bootstrap')">
+        <img src="https://img.icons8.com/color/48/000000/bootstrap.png" alt="Bootstrap">
+        <span>Bootstrap</span>
+      </div>
+      <div class="skill-item" onclick="openPopup('react')">
+        <img src="https://img.icons8.com/color/48/000000/react-native.png" alt="React">
+        <span>React</span>
+      </div>
+      <!-- Add more skills as needed -->
+    </div>
+  
+    <!-- Popup Modal -->
+    <div id="popup" class="popup">
+      <div class="popup-content">
+        <span class="close" onclick="closePopup()">&times;</span>
+        <h2 id="popup-title">Skill Information</h2>
+        <p id="popup-description">Description goes here.</p>
+      </div>
+    </div>
+  </section>
+  
+  
+  <section id="contact" class="section contact">
+    <h2>Contact Me</h2>
+    <div class="contact-links">
+      <a href="https://wa.me/8695471593" target="_blank" class="contact-item">
+        <img src="https://img.icons8.com/color/48/000000/whatsapp.png" alt="WhatsApp">
+        <span>WhatsApp</span>
+      </a>
+      <a href="https://linkedin.com/in/developer-amit/" target="_blank" class="contact-item">
+        <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn">
+        <span>LinkedIn</span>
+      </a>
+      <a href="https://github.com/Devloper-Amitt" target="_blank" class="contact-item">
+        <img src="https://img.icons8.com/color/48/000000/github.png" alt="GitHub">
+        <span>GitHub</span>
+      </a>
+      <a href="mailto:tuduamit007@gmail.com" class="contact-item">
+        <img src="https://img.icons8.com/color/48/000000/email.png" alt="Email">
+        <span>Email</span>
+      </a>
+    </div>
+  </section>     
+
+  <footer>
+    <p>© 2024 Amit. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function openPopup(skill) {
+      const popup = document.getElementById("popup");
+      const title = document.getElementById("popup-title");
+      const description = document.getElementById("popup-description");
+  
+      // Set content based on the clicked skill
+      if (skill === 'html') {
+        title.innerText = "HTML";
+        description.innerText = "HTML is the standard markup language for creating web pages. I have been working with HTML for about 1.5 to 2 years, learning through YouTube, various websites, and a few books.";
+      } else if (skill === 'css') {
+        title.innerText = "CSS";
+        description.innerText = "CSS is a style sheet language used for describing the presentation of a document. My learning journey has involved numerous online resources and practice.";
+      } else if (skill === 'javascript') {
+        title.innerText = "JavaScript";
+        description.innerText = "JavaScript is a programming language that allows you to implement complex features on web pages. I've gained knowledge from tutorials and hands-on projects.";
+      } else if (skill === 'bootstrap') {
+        title.innerText = "Bootstrap";
+        description.innerText = "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. I've used it extensively in my projects.";
+      } else if (skill === 'react') {
+        title.innerText = "React";
+        description.innerText = "React is a JavaScript library for building user interfaces, maintained by Facebook. I've learned it through online courses and documentation.";
+      }
+  
+      // Add your overall experience description
+      description.innerHTML += "<br><strong>Experience:</strong> I have been a front-end developer for about 1.5 to 2 years, primarily self-taught through YouTube, websites, and books.";
+      
+      popup.style.display = "block"; // Show the popup
+    }
+  
+    function closePopup() {
+      document.getElementById("popup").style.display = "none"; // Hide the popup
+    }
+  
+    // Close the popup if the user clicks anywhere outside of it
+    window.onclick = function(event) {
+      const popup = document.getElementById("popup");
+      if (event.target === popup) {
+        closePopup();
+      }
+    }
+  </script>  
+</body>
+</html>
